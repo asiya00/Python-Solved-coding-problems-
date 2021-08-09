@@ -15,10 +15,7 @@ def Fibonacci(n):
         fibo[n] = result
         return result
 
-# Driver Program
-print(Fibonacci(9))
 print(Fibonacci(10))
-print(Fibonacci(50))
 print(Fibonacci(100))
 print(Fibonacci(150))
 print(Fibonacci(200))
@@ -27,3 +24,12 @@ print(Fibonacci(300))
 print(Fibonacci(400))
 print(Fibonacci(500))
 print(Fibonacci(600))
+print(Fibonacci(1000))
+print(Fibonacci(1500))
+print(Fibonacci(2000))
+print(Fibonacci(2500))
+print(Fibonacci(3000))
+print(Fibonacci(3500))
+print(Fibonacci(4000))
+print(Fibonacci(4500))
+print(len(str(Fibonacci(4782))))
