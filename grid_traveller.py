@@ -2,7 +2,9 @@
 
 In how many ways can you travel tothe goal on a grid with dimensions m * n?
 
-Write afunction 'grid_traveler(m, n)' that calculates this'''
+Write afunction 'grid_traveler(m, n)' that calculates this
+Time Complexity: O(m * n)
+space complexity O(n + m)'''
 
 
 memo = {}
