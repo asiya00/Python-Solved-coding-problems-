@@ -368,21 +368,25 @@ if trainee3 >= trainee1 and trainee3 >= trainee2:
 
 # Write a function CustomCaesarCipher(int key, String message) which will accept plaintext and key as input parameters and returns its cipher text as output.
 
-# def CustomCaesarCipher(key, message):
-# 	encoded_msg = "" 
-# 	for i in message:
-# 		if i.isalpha() and i.isupper():
-# 			encoded_msg += chr((ord(i) + key - 65) % 26 + 65)
-# 		elif i.isalpha() and i.islower():
-# 			encoded_msg += chr((ord(i) + key - 97) % 26 + 97)
-# 		elif i.isdigit():
-# 			encoded_msg += str(int(i) + key)
-# 		else:
-# 			encoded_msg += i
+def CustomCaesarCipher(key, message):
+	encoded_msg = "" 
+	if key < 0:
+		return "INVALID INPUT"
+	for i in message:
+		if i.isalpha() and i.isupper():
+			encoded_msg += chr((ord(i) + key - 65) % 26 + 65)
+		elif i.isalpha() and i.islower():
+			encoded_msg += chr((ord(i) + key - 97) % 26 + 97)
+		elif i.isdigit() and int(i) in range(0,10):
+			if i=='9':
+				encoded_msg += '0'
+			else:
+				encoded_msg += str(int(i) + key)
+		else:
+			encoded_msg += i
+	return encoded_msg
 
-# 	return encoded_msg
-
-# print(CustomCaesarCipher(1, "All the best"))
+print(CustomCaesarCipher(1, "All the best9"))
 
 # TCS Coding Question Day 1 Slot 2 – Question 1
 # Problem Statement
