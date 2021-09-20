@@ -1,4 +1,4 @@
-li = [5,4,3,2,1]
+li = [20, 47, 15, 8, 9, 4, 40, 30, 12, 17]
 
 def merge(li):
 	if len(li)>1:
@@ -19,6 +19,7 @@ def merge(li):
 			else:
 				li[k] = r[j]
 				j+=1
+			
 
 merge(li)
 print(li)

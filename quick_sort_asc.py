@@ -20,4 +20,3 @@ def quick_sort(arr, low, high):
 arr = [2,1,5,6,8,4,3]
 quick_sort(arr, 0, len(arr) - 1)
 print(arr)
-
