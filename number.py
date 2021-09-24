@@ -15,4 +15,6 @@ def number(n,d):
 	odd = number(sumo, d)
 	return even or odd
 
-print(number(121045, 0))
+n = int(input())
+d = int(input())
+print(number(n, d))
