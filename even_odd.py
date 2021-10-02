@@ -33,5 +33,3 @@ print(distinct_subarrays([6,3,5,8],1))
 
 print(distinct_subarrays([2,1,2,1,3], 2))
 
-# distinct_subarrays([2, 2, 5, 6, 9, 2, 11, 9, 2, 11, 12], 1)
-
