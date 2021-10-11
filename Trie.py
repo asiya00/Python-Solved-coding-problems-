@@ -35,9 +35,9 @@ class Trie:
 			temp = temp.children[letter]
 		return True
 
-	# def display(self):
-	# 	temp = self.root
-	# 	print(temp.children)
+	def display(self):
+		temp = self.root
+		print(temp.children)
 
 T = Trie()
 
