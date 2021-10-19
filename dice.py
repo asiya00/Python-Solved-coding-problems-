@@ -29,7 +29,8 @@ for i in range(len(nums)):
 		if nums[i] == nums[j]:
 			count +=1
 
-print(count)'''
+print(count)
+'''
 
 def score(arr):
 	ans = 0
@@ -66,4 +67,4 @@ def score(arr):
 	else:
 		ans +=200*(di1[2]//3)
 	print(ans)
-score([1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 5, 5])
+score([1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 3, 3, 5, 5])'''
