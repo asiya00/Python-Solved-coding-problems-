@@ -40,21 +40,35 @@ class BST:
 
 	# Minimum element
 	def getmin_ele(self):
-		current = self.lchild
-		if not current:
+		# current = self.lchild
+		# if not current:
+		# 	return self.key
+		# while current.lchild:
+		# 	current = current.lchild
+		# return current.key
+		if not self.key:
+			print("BST is empty")
+			return
+		if not self.lchild:
 			return self.key
-		while current.lchild:
-			current = current.lchild
-		return current.key
+		else:
+			return self.lchild.getmin_ele()
 
 	# Maximum element
 	def getmax_ele(self):
-		current = self.rchild
-		if not current:
+		# current = self.rchild
+		# if not current:
+		# 	return self.key
+		# while current.rchild:
+		# 	current = current.rchild
+		# return current.key
+		if not self.key:
+			print("BST is empty")
+			return
+		if not self.rchild:
 			return self.key
-		while current.rchild:
-			current = current.rchild
-		return current.key
+		else:
+			return self.rchild.getmin_ele()
 
 
 	# Delete method
