@@ -14,6 +14,7 @@ def arrayManipulation(n, queries):
         maximum = max(maximum, sumq)
     return maximum
 
+
 queries = [[1, 2, 100], [2, 5, 100], [3, 4, 100]]
 n = 5
 

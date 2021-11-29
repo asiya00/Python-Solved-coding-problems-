@@ -1,16 +1,16 @@
 class Priority_Queue:
-    def __init__(self,size):
+    def __init__(self, size):
         self.size = size
         self.arr = [0] * size
         self.pointer = -1;
 
-    def left_child(self,index):
+    def left_child(self, index):
         return 2*index + 1
 
-    def right_child(self,index):
+    def right_child(self, index):
         return 2*index + 2
 
-    def parent(self,index):
+    def parent(self, index):
         return (index-1)//2
 
     def minheapify(self, index, heapsize):
@@ -26,9 +26,9 @@ class Priority_Queue:
             self.arr[largest], self.arr[index] = self.arr[index], self.arr[largest]
             self.minheapify(largest, heapsize)
 
-    def build_min_heap_tree(self,heapsize):
-        for i in range(heapsize//2,-1,-1):
-            self.minheapify(i,heapsize)
+    def build_min_heap_tree(self, heapsize):
+        for i in range(heapsize//2, -1, -1):
+            self.minheapify(i, heapsize)
 
     def heap_minimum_value(self):
         return self.arr[0]
@@ -49,7 +49,6 @@ class Priority_Queue:
         else:
             return "Queue is Full"
 
-
     # def insert_queue(self,data):
     #     if self.pointer != self.size - 1:
     #         self.pointer += 1
@@ -65,9 +64,9 @@ class Priority_Queue:
             self.arr[0], self.arr[self.pointer] = self.arr[self.pointer], self.arr[0]
             removed = self.arr[self.pointer]
             self.pointer = self.pointer - 1
-            self.minheapify(0,self.pointer)
+            self.minheapify(0, self.pointer)
 
-    def remove_element(self,data):
+    def remove_element(self, data):
         if self.pointer == -1:
             return "Queue is empty"
         else:
@@ -75,13 +74,12 @@ class Priority_Queue:
                 i = self.arr.index(data)
                 self.arr[i], self.arr[self.pointer] = self.arr[self.pointer], self.arr[i]
                 self.pointer = self.pointer - 1
-                self.minheapify(i,self.pointer)
+                self.minheapify(i, self.pointer)
             except ValueError:
                 print("Element not found")
 
     def display(self):
         return self.arr[:self.pointer+1]
-
 
 
 pqueue = Priority_Queue(10)

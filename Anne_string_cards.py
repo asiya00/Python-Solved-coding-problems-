@@ -14,17 +14,16 @@
 # At least one of A and B are non zero
 
 # N = 9
-# b = 3 
-# r = 4 
+# b = 3
+# r = 4
 
-# bbbrrrr  
+# bbbrrrr
 
 n, b, r = map(int, input().split())
 a = b
-d = n//(b+r) # 1
-e = n % (b+r) // #2 st[:2] bbbrrr
-if e>b:
-	f = e - b
-	e = e - f 
+d = n//(b+r)  # 1
+e = n % (b+r)  # 2 st[:2] bbbrrr
+if e > b:
+    f = e - b
+    e = e - f
 print(a*d+e)
-

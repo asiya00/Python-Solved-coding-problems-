@@ -13,27 +13,25 @@ Assuming non negative numbers'''
 # Space complexity O(m)
 
 memo = {}
-
 def canSum(targetSum, arr):
-	if not targetSum:
-		return True
+    if not targetSum:
+        return True
 
-	if targetSum in memo:
-		return memo[targetSum]
+    if targetSum in memo:
+        return memo[targetSum]
 
-	if targetSum < 0:
-		return False
+    if targetSum < 0:
+        return False
 
-	for num in arr:
-		substracted = targetSum - num
-		if canSum(substracted, arr):
-			memo[targetSum] = True
-			return memo[targetSum]
+    for num in arr:
+        substracted = targetSum - num
+        if canSum(substracted, arr):
+            memo[targetSum] = True
+            return memo[targetSum]
 
-	memo[targetSum] = False
-	return memo[targetSum]
+    memo[targetSum] = False
+    return memo[targetSum]
 
 
 print(canSum(7, [5, 4, 3, 7]))
 print(canSum(300, [7, 14]))
-
