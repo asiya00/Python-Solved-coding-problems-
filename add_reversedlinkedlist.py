@@ -21,7 +21,7 @@ def print_list(head):
     return li
 
 class Solution:
-    def add_linkedlist(self,list1,list2):
+    def add_linkedlist(self, list1, list2):
         temp1 = list1
         temp2 = list2
         num1 = ""
@@ -40,6 +40,6 @@ class Solution:
 
 a = Solution()
 
-list1 = makelinkedlist([3,7,3][::-1])
-list2 = makelinkedlist([4,5,8][::-1])
-print(a.add_linkedlist(list1,list2))
+list1 = makelinkedlist([3, 7, 3][::-1])
+list2 = makelinkedlist([4, 5, 8][::-1])
+print(a.add_linkedlist(list1, list2))

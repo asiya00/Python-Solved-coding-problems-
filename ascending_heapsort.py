@@ -24,7 +24,6 @@ def max_heapify(arr, index, heapsize):
         max_heapify(arr, largest, heapsize)
 
 
-
 def build_max_heap_tree(arr, heapsize):
     for i in range(len(arr)-1//2, -1, -1):
         max_heapify(arr, i, heapsize)
