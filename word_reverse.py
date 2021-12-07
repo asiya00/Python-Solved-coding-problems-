@@ -14,4 +14,4 @@ def word_reverse(s):
 	while start!=end:
 		print(s[start], end="")
 		start+=1
-word_reverse("hello world")
+word_reverse("janvi karia")
