@@ -17,6 +17,7 @@ class Solution:
                 curString += c
         return curString
 
-if __name__=="__main__":
-	t=Solution()
-	print(t.decodeString("3[abc]2[ab]c"))
+
+if __name__ == "__main__":
+    t = Solution()
+    print(t.decodeString("3[abc]2[ab]c"))

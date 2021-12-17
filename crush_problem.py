@@ -23,6 +23,7 @@ def arrayManipulation(n, queries):
         print(arr)
     return maximum
 
+
 first_multiple_input = input().rstrip().split()
 
 n = int(first_multiple_input[0])

@@ -6,6 +6,7 @@ def rotateLeft(d, arr):
         print(arr)
     return arr
 
+
 arr = [1, 2, 3, 4, 5]
 d = 4
 print(rotateLeft(d, arr))
