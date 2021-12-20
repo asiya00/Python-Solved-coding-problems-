@@ -36,11 +36,9 @@ class CovBedsAnalysis:
 
         for i in self.city_list:
             if i.state_name == state:
-                count_city += 2
+                count_city += 1
                 total_occupied_cov.append(i.covidbeds)
-                total_occupied_cov.append(i.avlblcovbeds)
                 total_occupied_ventil.append(i.ventilbeds)
-                total_occupied_ventil.append(i.avlblventilbeds)
         if not total_occupied_cov and not total_occupied_ventil:
             return None
 
