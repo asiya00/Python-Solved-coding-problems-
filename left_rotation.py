@@ -1,5 +1,4 @@
 def rotateLeft(d, arr):
-    # Write your code here
     for i in range(d):
         b = arr.pop(0)
         arr.append(b)
