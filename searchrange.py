@@ -22,22 +22,16 @@ def searchRange(nums, target):
     length = len(nums)
     if index > -1:
         for i in range(index, length):
-            temp = i
-            if nums[i] != target or i == length - 1:
+            if i < length and nums[i] == target:
+                end = i
+            else:
                 break
-        if temp == length - 1 and nums[temp] == target:
-            end = temp
-        else:
-            end = temp - 1
 
         for i in range(index, -1, -1):
-            temp = i
-            if nums[i] != target:
+            if i > -1 and nums[i] == target:
+                start = i
+            else:
                 break
-        if temp == 0 and nums[temp] == target:
-            start = temp
-        else:
-            start = temp + 1
         return [start, end]
     return [-1, -1]
 
