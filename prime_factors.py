@@ -25,16 +25,18 @@
 def largest_prime_factor(n):
     largest = 2
     while n % 2 == 0:
+        print(2)
         n = n // 2
 
     for i in range(3, int(n**0.5)+1, 2):
         while n % i == 0:
-            largest = i
+            # largest = i
+            print(i)
             n = n // i
     if n > 2:
-        largest = n
-    return largest
+        # largest = n
+        print(n)
+    # return largest
 
-
-print(largest_prime_factor(600851475143))
+largest_prime_factor(132)
 
