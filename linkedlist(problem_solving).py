@@ -39,26 +39,29 @@ class LinkedList:
 	def folding_linked_list(self):
 		slow = self.head
 		fast = self.head
+		middle = slow
 		count = 0
+		if not self.head.next:
+			return
 		while fast and fast.next:
+			count += 1
+			middle = slow
 			slow = slow.next
 			fast = fast.next.next
-			count += 1
+		curr = slow
 		prev = None
-		while slow:
-			n = slow.next
-			slow.next = prev
-			prev = slow
-			slow = n
-		temp = self.head
-		while count:
-			n = temp.next
-			p = prev.next
-			temp.next = prev
-			prev.next = n 
-			temp = n 
-			prev = p
-			count -= 1
+		while curr:
+			n = curr.next
+			curr.next = prev
+			prev = curr
+			curr = n
+		middle.next = None
+		curr = self.head
+		while prev:
+			n = curr.next
+			curr.next = prev
+			curr = prev 
+			prev = n
 
 	def display(self):
 		temp = self.head
@@ -70,11 +73,13 @@ class LinkedList:
 
 
 l = LinkedList()
-l.insert_end(10)
-l.insert_end(20)
-l.insert_end(30)
-l.insert_end(40)
-l.insert_end(50)
+l.insert_end(1)
+l.insert_end(2)
+l.insert_end(3)
+l.insert_end(4)
+l.insert_end(5)
+l.insert_end(60)
+l.insert_end(70)
 
 a = l.display()
 # print(l.check_palindrome())
