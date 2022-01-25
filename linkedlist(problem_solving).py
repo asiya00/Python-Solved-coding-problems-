@@ -40,12 +40,11 @@ class LinkedList:
 		slow = self.head
 		fast = self.head
 		middle = slow
-		count = 0
 		if not self.head.next:
 			return
 		while fast and fast.next:
-			count += 1
 			middle = slow
+			# print(middle.data)
 			slow = slow.next
 			fast = fast.next.next
 		curr = slow
@@ -55,6 +54,7 @@ class LinkedList:
 			curr.next = prev
 			prev = curr
 			curr = n
+		print(prev.data)
 		middle.next = None
 		curr = self.head
 		while prev:
