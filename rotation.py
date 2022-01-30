@@ -3,10 +3,7 @@ def findKRotation(arr,  n):
         mid = (low+high)//2
         if arr[mid] < arr[mid-1] and arr[mid] < arr[mid+1]:
             return mid
-        if mid < high and arr[mid] > arr[mid+1]:
-            print(arr[low:high], mid)
-            return mid + 1
-        if mid == low and (arr[mid] > arr[mid+1]):
+        if (mid == low or mid < high) and arr[mid] > arr[mid+1]:
             return mid + 1
         elif arr[mid] < arr[low]:
             return binarysearch(arr, low, mid-1)
