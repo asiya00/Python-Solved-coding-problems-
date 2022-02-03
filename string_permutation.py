@@ -1,4 +1,4 @@
-def isPermutation(cls, input1, input2):
+def isPermutation(input1, input2):
     di = {}
     for i in input1:
         if i in di:
@@ -11,8 +11,7 @@ def isPermutation(cls, input1, input2):
             di1[j] += 1
         else:
             di1[j] = 1
-    if di == di1:
-        return "yes"
-    return "no"
+    return di == di1:
 
 print(isPermutation("Mettl", "Coding"))
+print(isPermutation("zbk", "zkb"))
