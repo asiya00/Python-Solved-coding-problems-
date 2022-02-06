@@ -23,7 +23,7 @@
 # print(prime_factors(n))
 
 def largest_prime_factor(n):
-    largest = 2
+    # largest = 2
     while n % 2 == 0:
         print(2)
         n = n // 2
