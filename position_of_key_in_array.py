@@ -14,7 +14,7 @@ for j in inkey:
 	for i in indexes:
 		if j in di[i]:
 			if int(i[0]) > 1:
-				outstr += str((inrow * int(i[0])) - (int(i[1])-1)) + str(di[i].index(j)+1)
+				outstr += str((inrow * int(i[0])) - (incol - int(i[1]))) + str(di[i].index(j)+1)
 			else:
 				outstr += i[1] + str(di[i].index(j)+1)
 			break
