@@ -1,15 +1,26 @@
-s = [1, 2, 3]
+s = "abbcac"
+# s = "abcdef"
+# s = "afabrabat"
 
-
-def substring(s, li=[], output=[]):
+def substring(s, output="", li=[0]):
     if len(s) == 0:
-        li.append(output)
-        return
+        if len(output) != 0 and len(output) % 2 == 0:
+        	mid = len(output)//2
+        	if output[:mid] == output[mid:]:
+        		if li[0] < len(output):
+        			li[0] = len(output)
+        return li
     output1 = output
-    output2 = output + [s[0]]
-    substring(s[1:], li, output1)
-    substring(s[1:], li, output2)
+    output2 = output + s[0]
+    substring(s[1:], output1)
+    substring(s[1:], output2)
     return li
 
+maximum = 0
 
-print(substring(s))
+for i in range(len(s)):
+	maxi_ans = substring(s[:len(s)-i]+s[len(s)-i:][::-1])
+	maximum = max(maximum, maxi_ans[0]) 
+
+print(maximum)
+

@@ -86,6 +86,8 @@ a = l.display()
 l.folding_linked_list()
 l.display()
 
+1 2 3 4 5 6
+slo
 
 
 
