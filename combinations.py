@@ -8,10 +8,8 @@ def combinations(li, k):
 	for i in range(len(li)):
 		fixed = li[i]
 		remaining = li[i+1:]
-
 		for j in combinations(remaining, k-1):
 			stack.append([fixed]+j)
 	return stack
-
 
 print(combinations(li, k))
