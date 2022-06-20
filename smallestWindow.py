@@ -1,52 +1,44 @@
-# brute force approach
-s = "bdheedcfeeafhijabdbehhfaigjghiijabcfagjgcedbjhhehajgbgbiechagdfeaffejdhhihdhjjahbcgcgdfbfdadhdgefghchdhdigbjciehiebgahbahddhiidebcfaieefjgefaafhbfiabgdbjcfbaedgfhigbgibegjfjjgicjcgciccfdhehcgjdeccbfehdgcddighgagfbeheaccahgfggdbgeaiajeahegbcjadehajafjfcdbbjfgahhcjbaigfbfiifdegiafeejibcfbdecfeicbjgabhbhfdgebfjjjjbggfgcibhehchhffhcebcbdbcedbadjehffjihhdichhebajjgbehjacbbidagihdijjecfcjeibfadbdaehcfjfbjhgbdgbhdjggiajfgjfdifafgebdbjghbehceaiedabebhgigagehcfegjeaiehbfgedaddegiaahgacigafihahegefjgjhhijjfgbddhiafhbjiicjaaigeeeiiadj"
-p = "cdaehaihiejehfcfajjcidcdhghfjejbgibadbbgbjegfhgggfgaefaaabcbgdiffdejdijebfebejhaccffehff"
+s = "zoomlazapzo"
+p = "oza"
+
+def smallestWindow(s, p):
+    if len(s) < len(p):
+        return -1
+
+    di1 = {i:0 for i in s}
+    di2 = {j:0 for j in p}
+    count = 0
+    minimum_size = float("inf")
+    start = 0
+    start_ind = float("inf")
+
+    for k in p:
+        di2[k] += 1
+
+    for end in range(0, len(s)):
+        di1[s[end]] += 1
+        if s[end] in di2:
+            if di1[s[end]] <= di2[s[end]]:
+                count += 1
+
+        if count == len(p):
+            while (s[start] in di2 and di1[s[start]] > di2[s[start]]) or s[start] not in di2:
+                if s[start] in di2 and di1[s[start]] > di2[s[start]]:
+                    di1[s[start]] -= 1
+                start += 1
+            if end-start+1 < minimum_size:
+                minimum_size = end-start+1
+                start_ind = start
+    if start_ind == float("inf"):
+        return -1
+        
+    return s[start_ind: start_ind+minimum_size]
+
+print(smallestWindow(s, p))
 
 
 
-# def smallestWindow(s, p):
-#     if len(s) < len(p):
-#         return -1
-#     di = {i:0 for i in p}  #{o:2,1, z:2, 1, a:1}
-#     start = 0 #1,2
-#     li = []
-#     start_ind = 0
-#     last_ind = 0
-#     minimum_size = len(s) #6, 5 
-#     count = 0 #1,2,3
-#     for end, val in enumerate(s):   #end=0,1,2,3,4,5,6  val=z,o,o,m,l,a,z
-#         if val in di and di[val] == 0: #t  
-#             di[val] = 1 
-#             count += 1
-#         else:
-#             if val in di:
-#                 di[val] += 1
-#         # print(di)
-#         while count == len(p):
-#             print(count)
-#             if end >= len(s):
-#                 break
-#             if end-start+1 < minimum_size:
-#                 minimum_size = end-start+1
-#                 start_ind = start
-#                 last_ind = end
 
-#             # minimum_size = min(minimum_size, end-start+1) #5-0+1 6-0+1 6-2+1
-#             if s[start] in di: #start=0 s[start]=z, 
-#                 if di[s[start]] == 1:
-#                     # print(s[start:end+1])
-#                     li.append(s[start:end+1])
-#                     # print(di)
-#                     break
-#                 else:
-#                     di[s[start]] -= 1
-#                     start += 1
-#             elif s[start] not in di:
-#                 start += 1
-#             # print(start, end)
-#     return s[start_ind:last_ind+1], li
 
-# # print(smallestWindow("zoomlazapzo", "oza"))
-s = "bdheedcfeeafhijabdbehhfaigjghiijabcfagjgcedbjhhehajgbgbiechagdfeaffejdhhihdhjjahbcgcgdfbfdadhdgefghchdhdigbjciehiebgahbahddhiidebcfaieefjgefaafhbfiabgdbjcfbaedgfhigbgibegjfjjgicjcgciccfdhehcgjdeccbfehdgcddighgagfbeheaccahgfggdbgeaiajeahegbcjadehajafjfcdbbjfgahhcjbaigfbfiifdegiafeejibcfbdecfeicbjgabhbhfdgebfjjjjbggfgcibhehchhffhcebcbdbcedbadjehffjihhdichhebajjgbehjacbbidagihdijjecfcjeibfadbdaehcfjfbjhgbdgbhdjggiajfgjfdifafgebdbjghbehceaiedabebhgigagehcfegjeaiehbfgedaddegiaahgacigafihahegefjgjhhijjfgbddhiafhbjiicjaaigeeeiiadj"
-p = "cdaehaihiejehfcfajjcidcdhghfjejbgibadbbgbjegfhgggfgaefaaabcbgdiffdejdijebfebejhaccffehff"
-# print(smallestWindow(s, p))
+
+
