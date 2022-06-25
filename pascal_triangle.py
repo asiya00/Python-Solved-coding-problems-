@@ -28,5 +28,3 @@ for i in range(n):
 		temp.append(1)
 		print(*temp)
 		li[:] = temp[:]
-
-
